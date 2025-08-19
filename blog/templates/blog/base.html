@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    {% include "blog/partials/head.html" %}
-  </head>
-  <body>
-    {% include "blog/partials/header.html" %}
-    {% block content %}{% endblock content %}
-    {% include "blog/partials/pagination.html" %}
-    {% include "blog/partials/footer.html" %}
+<head>
+  {% include 'blog/partials/head.html' %}
+</head>
+<body>
+  <div class="blog-wrapper">
+    {% include 'blog/partials/header.html' %}
 
-  </body>
+    {% block content %}{% endblock content %}
+    
+    {% include 'blog/partials/pagination.html' %}
+    
+    {% include 'blog/partials/footer.html' %}
+  </div>
+</body>
 </html>
