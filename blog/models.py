@@ -36,7 +36,7 @@ class Category(models.Model):
     def save(self, *args, **kwargs):
         if not self.slug:
             self.slug = slugfy_new(self.name)
-        return super.save(*args, **kwargs)
+        return super().save(*args, **kwargs)
     
     def __str__(self):
         return self.name
@@ -61,6 +61,12 @@ class Page(models.Model):
     
     def __str__(self):
         return self.title
+    
+    def get_absolute_url(self):
+        
+        if not self.is_published:
+            return reverse('blog:index')
+        return reverse('blog:post' , args=(self.slug,))
 
 class PostManager(models.Manager):
     

@@ -148,7 +148,9 @@ pre,
 code {
   font-family: var(--ff-mono);
 }
-
+img{
+  margin: 0 auto;
+}
 input[type='search']::-webkit-search-decoration,
 input[type='search']::-webkit-search-cancel-button,
 input[type='search']::-webkit-search-results-button,
@@ -194,7 +196,9 @@ html,
 .pb-base {
   padding-bottom: var(--spacing-base);
 }
-
+.mt-base{
+  margin-top: var(--spacing-base);
+}
 .center {
   text-align: center;
 }

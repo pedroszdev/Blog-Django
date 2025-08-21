@@ -5,11 +5,13 @@ from django.conf.urls.static import static
 app_name='blog'
 
 urlpatterns = [
-    path('', views.home , name='home'),
+    path('', views.PostListView.as_view() , name='home'),
     path('post/<slug:slug>/', views.post , name='post'),
     path('page/<slug:slug>/', views.page, name='page'),
     path('created_by/<int:author_pk>/', views.created_by, name='created_by'),
     path('category/<slug:slug>/', views.category, name='category'),
+    path('tag/<slug:slug>/', views.tag, name='tag'),
+    path('search/', views.SearchListView.as_view(), name='search'),
     
 ]
 
